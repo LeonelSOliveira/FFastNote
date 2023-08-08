@@ -1,0 +1,286 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #141414;  /* Cor de fundo do corpo mais escura */
+    color: #FFFFFF;  /* Cor do texto branco */
+}
+
+header, footer {
+    background-color: #1F1F1F; /* Cor de fundo do cabeçalho e rodapé mais escura */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFFFFF; /* Cor do texto branco */
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    align-items: flex-start; /* alinha os itens para o início do container */
+    justify-content: center;
+}
+
+#notes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* ajustado o espaçamento */
+    width: 100%;
+    margin-top: 60px; /* Adicionado para mover notas para baixo */
+}
+
+.note {
+    position: relative; 
+    background-color: #282828;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px; /* Adicionado para limitar a largura da nota */
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    color: #FFFFFF;
+    z-index: 1; /* Adicionado para trazer a nota para frente */
+    border-radius: 15px; /* Adicionado para arredondar bordas */
+    transition: background-color 0.5s ease; /* Adicionado para transições suaves */
+}
+
+.color-picker {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100px;
+    position: flex;    
+}
+
+.note .note-items {
+    margin-bottom: 10px;
+}
+
+.note .item {
+    display: flex;
+    align-items: center;
+}
+
+.note .item p {
+    white-space: normal; 
+    word-break: break-all;
+    color: #FFFFFF; 
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #FFFFFF; /* Cor do texto branco */
+    transition: transform 0.3s ease; /* Adicionado para efeitos de hover */
+}
+
+button:hover {
+    transform: scale(1.1); /* Efeito de escala no hover */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    color: #FFFFFF; /* Cor do texto branco */
+    background-color: #282828; /* Cor de fundo da entrada de texto mais escura */
+}
+
+.note-title {
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #FFFFFF; /* Cor do texto branco */
+}
+
+.color-option {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.change-color, .delete-note, .add-item {
+    background: none;
+    border: none;
+}
+
+.note-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.change-color-button,
+.delete-note-button,
+.add-item-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #FFFFFF;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Adicionado para transições suaves */
+}
+
+.change-color-button:hover,
+.delete-note-button:hover,
+.add-item-button:hover {
+    background-color: #FFFFFF;
+    color: #282828;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.note {
+    /* ... outros estilos ... */
+    overflow-wrap: break-word; /* Quebra as palavras conforme necessário para evitar overflow */
+    word-wrap: break-word; /* Propriedade alternativa para navegadores mais antigos */
+}
+
+input[type='checkbox'] {
+    border: 2px solid #555;
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type='checkbox']:checked {
+    background-color: #555;
+    border-color: #555;
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #282828;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 800px; /* Defina a largura máxima desejada */
+    width: 100%;
+}
+
+#note-input {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.input-wrapper button {
+    background: none;
+    color: #FFFFFF;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.input-wrapper button:hover {
+    color: #888;
+}
+
+
+
+
+.input-wrapper {
+    overflow: center;
+    display: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #282828;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 800px; /* Defina a largura máxima desejada */
+    width: 100%;
+    margin-top: auto; /* Empurra o input-wrapper para baixo */
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input-wrapper {
+    position: fixed; 
+    bottom: 10px;
+    left: 50%; 
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #282828;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 800px; 
+    width: 90%; 
+    z-index: 9999;  /* Adicione esta linha */
+}
+
+#notes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; 
+    width: 100%;
+    margin-top: 40px;
+}
+
+#notes-container:last-child {
+    margin-bottom: 70px; /* Ajuste este valor para a distância desejada */
+}
+
