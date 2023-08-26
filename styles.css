@@ -107,13 +107,9 @@ input[type="text"] {
     justify-content: space-between;
 }
 
-.change-color, .delete-note, .add-item {
-    background: none;
-    border: none;
-}
-
 .note-buttons {
     position: absolute;
+    font-size: 0.9em;
     top: 0em; /* ajustado */
     right: 1em; /* ajustado */
     display: flex;
@@ -128,8 +124,6 @@ input[type="text"] {
     color: #FFFFFF;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
-
-
 
 .modal {
     display: none;
@@ -210,12 +204,13 @@ footer {
 .input-wrapper button {
     background: none;
     color: #FFFFFF;
-    font-size: 1.5em;
+    font-size: 1.4em;
     cursor: pointer;
 }
 
 .input-wrapper button:hover {
     color: #888;
+    
 }
 
 .input-wrapper {
