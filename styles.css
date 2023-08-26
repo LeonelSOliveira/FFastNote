@@ -110,7 +110,7 @@ input[type="text"] {
 .note-buttons {
     position: absolute;
     font-size: 0.9em;
-    top: 0em; /* ajustado */
+    top: 0.3em; /* ajustado */
     right: 1em; /* ajustado */
     display: flex;
     gap: 0.5em; /* ajustado */
