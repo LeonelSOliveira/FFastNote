@@ -114,7 +114,7 @@ input[type="text"] {
 
 .note-buttons {
     position: absolute;
-    top: 1em; /* ajustado */
+    top: 0em; /* ajustado */
     right: 1em; /* ajustado */
     display: flex;
     gap: 0.5em; /* ajustado */
@@ -262,4 +262,17 @@ body {
     width: 100%;
     margin-top: 5em; /* ajustado */
     padding-bottom: 6em; /* ajustado para acomodar a caixa de entrada fixada */
+}
+
+/* Remove o contorno do foco padrão no navegador */
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-color: initial !important;
+}
+
+/* Adiciona um estilo de foco personalizado para manter a acessibilidade */
+input[type="text"]:focus, textarea:focus {
+    border: 2px solid #282828;  /* você pode ajustar essa cor conforme necessário */
 }
