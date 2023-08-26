@@ -13,6 +13,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+
+// Função para criar uma nota
+    function createNoteAndAppend(value) {
+        if (value.trim() !== '') {
+            let newNote = createNote(value);
+            notesContainer.appendChild(newNote);
+            saveNotes();
+        }
+    }
+
+    // Adicionando evento de clique ao botão "💭"
+    document.querySelector('button[type="brain"]').addEventListener('click', function() {
+        createNoteAndAppend(newNoteInput.value);
+        newNoteInput.value = ''; // Limpa o campo de entrada após adicionar a nota
+    });
+    
+
     function saveNotes() {
         let noteElements = Array.from(notesContainer.getElementsByClassName('note'));
         let notes = noteElements.map(note => {
