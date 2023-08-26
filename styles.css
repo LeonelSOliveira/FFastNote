@@ -129,10 +129,7 @@ input[type="text"] {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.change-color-button:hover, .delete-note-button:hover, .add-item-button:hover {
-    background-color: #FFFFFF;
-    color: #282828;
-}
+
 
 .modal {
     display: none;
