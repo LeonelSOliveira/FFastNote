@@ -124,7 +124,7 @@ input[type="text"] {
     border: none;
     background: none;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #FFFFFF;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
