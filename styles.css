@@ -5,25 +5,25 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #141414;  /* Cor de fundo do corpo mais escura */
-    color: #FFFFFF;  /* Cor do texto branco */
+    background-color: #141414;
+    color: #FFFFFF;
 }
 
 header, footer {
-    background-color: #1F1F1F; /* Cor de fundo do cabeçalho e rodapé mais escura */
-    padding: 10px;
+    background-color: #1F1F1F;
+    padding: 2em; /* ajustado */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #FFFFFF; /* Cor do texto branco */
+    color: #FFFFFF;
 }
 
 main {
     flex-grow: 1;
-    padding: 20px;
+    padding: 2em; /* ajustado */
     overflow-y: auto;
     display: flex;
-    align-items: flex-start; /* alinha os itens para o início do container */
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -31,33 +31,32 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px; /* ajustado o espaçamento */
+    gap: 2em; /* ajustado */
     width: 100%;
-    margin-top: 60px; /* Adicionado para mover notas para baixo */
+    margin-top: 3em; /* ajustado */
 }
 
 .note {
-    position: relative; 
+    position: relative;
     background-color: #282828;
-    padding: 30px;
+    padding: 1em; /* ajustado */
     width: 100%;
-    max-width: 800px; /* Adicionado para limitar a largura da nota */
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    max-width: 800px; /* ajustado para px */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     color: #FFFFFF;
-    z-index: 1; /* Adicionado para trazer a nota para frente */
-    border-radius: 15px; /* Adicionado para arredondar bordas */
-    transition: background-color 0.5s ease; /* Adicionado para transições suaves */
+    z-index: 1;
+    border-radius: 15px; /* ajustado para px */
+    transition: background-color 0.5s ease;
 }
 
 .color-picker {
     display: flex;
     flex-wrap: wrap;
-    width: 100px;
-    position: flex;    
+    width: 100px; /* ajustado */
 }
 
 .note .note-items {
-    margin-bottom: 10px;
+    margin-bottom: 1em; /* ajustado */
 }
 
 .note .item {
@@ -66,9 +65,9 @@ main {
 }
 
 .note .item p {
-    white-space: normal; 
+    white-space: normal;
     word-break: break-all;
-    color: #FFFFFF; 
+    color: #FFFFFF;
 }
 
 button {
@@ -76,31 +75,30 @@ button {
     background: none;
     cursor: pointer;
     font-size: 1.2em;
-    color: #FFFFFF; /* Cor do texto branco */
-    transition: transform 0.3s ease; /* Adicionado para efeitos de hover */
+    color: #FFFFFF;
+    transition: transform 0.3s ease;
 }
 
 button:hover {
-    transform: scale(1.1); /* Efeito de escala no hover */
+    transform: scale(1.1);
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 5px;
-    color: #FFFFFF; /* Cor do texto branco */
-    background-color: #282828; /* Cor de fundo da entrada de texto mais escura */
+    padding: 0.5em; /* ajustado */
+    color: #FFFFFF;
+    background-color: #282828;
 }
 
 .note-title {
-    
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #FFFFFF; /* Cor do texto branco */
+    color: #FFFFFF;
 }
 
 .color-option {
-    width: 20px;
-    height: 20px;
+    width: 20px; /* ajustado */
+    height: 20px; /* ajustado */
     cursor: pointer;
 }
 
@@ -116,26 +114,22 @@ input[type="text"] {
 
 .note-buttons {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 1em; /* ajustado */
+    right: 1em; /* ajustado */
     display: flex;
-    gap: 5px;
+    gap: 0.5em; /* ajustado */
 }
 
-.change-color-button,
-.delete-note-button,
-.add-item-button {
+.change-color-button, .delete-note-button, .add-item-button {
     border: none;
     background: none;
     cursor: pointer;
     font-size: 1.2em;
     color: #FFFFFF;
-    transition: background-color 0.5s ease, color 0.5s ease; /* Adicionado para transições suaves */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.change-color-button:hover,
-.delete-note-button:hover,
-.add-item-button:hover {
+.change-color-button:hover, .delete-note-button:hover, .add-item-button:hover {
     background-color: #FFFFFF;
     color: #282828;
 }
@@ -149,43 +143,40 @@ input[type="text"] {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
+    padding: 2em; /* ajustado */
+    border: 1px solid #888; /* ajustado */
     width: 80%;
 }
 
 .close {
     color: #aaaaaa;
     float: right;
-    font-size: 28px;
+    font-size: 28px; /* ajustado */
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
 .note {
-    /* ... outros estilos ... */
-    overflow-wrap: break-word; /* Quebra as palavras conforme necessário para evitar overflow */
-    word-wrap: break-word; /* Propriedade alternativa para navegadores mais antigos */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 input[type='checkbox'] {
-    border: 2px solid #555;
-    height: 20px;
-    width: 20px;
-    border-radius: 3px;
+    border: 2px solid #555; /* ajustado */
+    height: 20px; /* ajustado */
+    width: 20px; /* ajustado */
+    border-radius: 3px; /* ajustado */
     cursor: pointer;
 }
 
@@ -193,8 +184,6 @@ input[type='checkbox']:checked {
     background-color: #555;
     border-color: #555;
 }
-
-
 
 footer {
     display: flex;
@@ -206,9 +195,9 @@ footer {
     align-items: center;
     justify-content: space-between;
     background-color: #282828;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 800px; /* Defina a largura máxima desejada */
+    padding: 1em; /* ajustado */
+    border-radius: 10px; /* ajustado */
+    max-width: 800px; /* ajustado */
     width: 100%;
 }
 
@@ -217,8 +206,8 @@ footer {
     background: none;
     border: none;
     color: #FFFFFF;
-    padding: 10px;
-    margin-right: 10px;
+    padding: 0.5em; /* ajustado */
+    margin-right: 1em; /* ajustado */
 }
 
 .input-wrapper button {
@@ -232,22 +221,16 @@ footer {
     color: #888;
 }
 
-
-
-
 .input-wrapper {
-    overflow: center;
-    display: center;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #282828;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 800px; /* Defina a largura máxima desejada */
+    padding: 1em; /* ajustado */
+    border-radius: 10px; /* ajustado */
+    max-width: 800px; /* ajustado */
     width: 100%;
-    margin-top: auto; /* Empurra o input-wrapper para baixo */
 }
-
 
 body {
     display: flex;
@@ -256,31 +239,27 @@ body {
 }
 
 .input-wrapper {
-    position: fixed; 
-    bottom: 10px;
-    left: 50%; 
+    position: fixed;
+    bottom: 1em; /* ajustado */
+    left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #282828;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 800px; 
-    width: 90%; 
-    z-index: 9999;  /* Adicione esta linha */
+    padding: 1em; /* ajustado */
+    border-radius: 10px; /* ajustado */
+    max-width: 800px; /* ajustado */
+    width: 90%;
+    z-index: 9999;
 }
 
 #notes-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px; 
+    gap: 2em; /* ajustado */
     width: 100%;
-    margin-top: 40px;
+    margin-top: 5em; /* ajustado */
+    padding-bottom: 6em; /* ajustado para acomodar a caixa de entrada fixada */
 }
-
-#notes-container:last-child {
-    margin-bottom: 70px; /* Ajuste este valor para a distância desejada */
-}
-
