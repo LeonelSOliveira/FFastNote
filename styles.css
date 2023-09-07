@@ -85,9 +85,10 @@ button:hover {
 
 input[type="text"] {
     width: 100%;
-    padding: 0.5em; /* ajustado */
+    padding: 0.9em; 
     color: #FFFFFF;
     background-color: #282828;
+    
 }
 
 .note-title {
@@ -181,48 +182,21 @@ footer {
     justify-content: center;
 }
 
-.input-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #282828;
-    padding: 1em; /* ajustado */
-    border-radius: 10px; /* ajustado */
-    max-width: 800px; /* ajustado */
-    width: 100%;
-}
+
 
 #note-input {
     flex-grow: 1;
+    
     background: none;
     border: none;
     color: #FFFFFF;
-    padding: 0.5em; /* ajustado */
+    padding: 0.8em; /* ajustado */
     margin-right: 1em; /* ajustado */
 }
 
-.input-wrapper button {
-    background: none;
-    color: #FFFFFF;
-    font-size: 1.4em;
-    cursor: pointer;
-}
 
-.input-wrapper button:hover {
-    color: #888;
-    
-}
 
-.input-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #282828;
-    padding: 1em; /* ajustado */
-    border-radius: 10px; /* ajustado */
-    max-width: 800px; /* ajustado */
-    width: 100%;
-}
+
 
 body {
     display: flex;
@@ -232,29 +206,34 @@ body {
 
 .input-wrapper {
     position: fixed;
-    bottom: 1em; /* ajustado */
-    left: 50%;
+    bottom: 1em;
+    left: 49.65%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #282828;
-    padding: 1em; /* ajustado */
-    border-radius: 10px; /* ajustado */
-    max-width: 800px; /* ajustado */
+    background-color: #525151;
+    padding: 1em;
+    border-radius: 10px;
+    max-width: 800px;
     width: 90%;
     z-index: 9999;
+    margin: auto;
 }
 
+
 #notes-container {
-    display: flex;
+    display: center;
     flex-direction: column;
     align-items: center;
-    gap: 2em; /* ajustado */
+    justify-content: center;
+    gap: 1em;
     width: 100%;
-    margin-top: 5em; /* ajustado */
-    padding-bottom: 6em; /* ajustado para acomodar a caixa de entrada fixada */
+    margin-top: 5em;
+    padding-bottom: 6em;
 }
+
+
 
 /* Remove o contorno do foco padrão no navegador */
 input[type="text"]:focus, textarea:focus {
@@ -268,3 +247,26 @@ input[type="text"]:focus, textarea:focus {
 input[type="text"]:focus, textarea:focus {
     border: 2px solid #282828;  /* você pode ajustar essa cor conforme necessário */
 }
+
+/* Adicione isto ao final do seu arquivo CSS */
+.settings-hidden {
+    display: none;
+}
+
+.settings-visible {
+    display: flex;
+}
+
+/* Adicione isto ao final do seu arquivo CSS */
+
+#settings-panel {
+    position: fixed;
+    bottom: 4em;  /* Ajuste conforme necessário */
+    left: 95%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    z-index: 9998;  /* Garantir que fique abaixo do input-wrapper */
+}
+
+
+
