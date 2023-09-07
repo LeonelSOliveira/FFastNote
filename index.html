@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Aplicativo de Notas</title>
+    <title>FFastNote</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -26,12 +26,22 @@
         <div class="input-wrapper">
             <input type="text" id="note-input" >
             <button type="brain">💭</button>
-            
-             
+            <button type="button" id="voice-button">🎙️</button>
+
+            <button type="button" id="config">⚙️</button>
+            <div id="settings-panel" class="settings-hidden">
+                <button id="color-button">🔵</button>
+                <button id="brightness-button">⚫</button>
+
+            </div>
+
+
         </div>
    
 
     <script src="main.js"></script>
-    
+    <script src="voz.js"></script>
+    <script src="config.js"></script>
+
 </body>
 </html>
