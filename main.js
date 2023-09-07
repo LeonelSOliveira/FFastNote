@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             saveNotes();
         }
     });
+    
 
 
 // Função para criar uma nota
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
             saveNotes();
         }
     }
-
+    
     // Adicionando evento de clique ao botão "💭"
     document.querySelector('button[type="brain"]').addEventListener('click', function() {
         createNoteAndAppend(newNoteInput.value);
