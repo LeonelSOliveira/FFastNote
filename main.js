@@ -58,6 +58,33 @@ document.addEventListener('DOMContentLoaded', function () {
         noteTitle.textContent = title;
         noteTitle.contentEditable = true;
         note.appendChild(noteTitle);
+
+        // CODIGO DA FORMATAÇÃO
+        let parts = title.split('|');
+        let actualTitle = parts[0].trim();  // Título real
+        let extraInfo = parts[1]?.trim();  // Informação extra, se houver
+
+        // Processando cor
+        if (extraInfo && extraInfo.startsWith("cor#")) {
+            let possibleColor = extraInfo.substr(4, 6); // Pegando os 6 próximos caracteres como possíveis códigos de cores
+
+            if (/^#[0-9A-F]{6}$/i.test('#' + possibleColor)) { // Verificando se é um código de cor válido
+                color = '#' + possibleColor;
+            }
+        }
+
+        note.style.backgroundColor = color;
+
+        // Agora processe o título e os itens como você fez antes
+        if (actualTitle.includes(';')) {
+            let titleParts = actualTitle.split(';');
+            noteTitle.textContent = titleParts[0];
+            items = titleParts.slice(1).map(item => ({ text: item, completed: false }));
+        } else {
+            noteTitle.textContent = actualTitle;
+        }
+
+
     
         const colors = ['#333333', '#2196f3', '#00BFFF', '#008B8B', '#00ffff', '#008000', '#2E8B57' , '#98FB98', '#4ee64e', '#4caf50', '#FFA07A','#C25E1C' ,'#FF8C00' , '#FFFF00' , '#F0E68C', '#FFD700', '#f44336', '#8B0000', '#A52A2A', '#DC143C', '#C71585', '#FF1493', '#FF69B4', '#BA55D3', '#9370DB', '#9c27b0', '#22142b', '#162b14', '#2b1414', '#15142b'];
     
