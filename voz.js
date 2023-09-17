@@ -33,6 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
         recognition.stop();  // Finaliza o reconhecimento de voz
     });
 
+    // Evento para reiniciar o reconhecimento quando ele parar
+    recognition.addEventListener("end", function () {
+        if (isRecording) {
+            recognition.start();
+        }
+    });
+
     // Eventos para o reconhecimento de voz
     recognition.addEventListener("result", function (event) {
         if (isRecording) {
