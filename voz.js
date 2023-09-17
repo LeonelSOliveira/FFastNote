@@ -22,12 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (isRecording) {
             recognition.stop();
             isRecording = false;
+            voiceButton.classList.remove("blinking");  // Remove a animação
         } else {
             recognition.start();
             isRecording = true;
+            voiceButton.classList.add("blinking");  // Adiciona a animação
         }
     });
-
+    
     recognition.addEventListener("result", function (event) {
         const transcript = Array.from(event.results)
             .map(result => result[0])
