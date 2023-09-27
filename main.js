@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         Texto a transformar: ${inputText}`;  // Usar inputText em vez de userInput
 
-        const apiKey = "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";
+        const apiKey = "";
         const payload = {
             prompt: prompt,
             max_tokens: 700
