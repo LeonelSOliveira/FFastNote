@@ -160,12 +160,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 return {
                     text: item.getElementsByTagName('p')[0].textContent,
                     completed: item.getElementsByTagName('input')[0].checked
+                    
                 };
             });
             return {
                 title: note.getElementsByTagName('h2')[0].textContent,
                 items: items,
-                color: note.style.backgroundColor // also save the note color
+                color: note.style.backgroundColor, // also save the note color
+                visibility: Array.from(note.querySelectorAll('p, input[type="checkbox"]')).map(el => el.style.display)  // save the visibility state
+                
             };
         });
         localStorage.setItem('notes', JSON.stringify(notes));
@@ -221,8 +224,28 @@ document.addEventListener('DOMContentLoaded', function() {
     
         note.appendChild(colorPicker);
     
+
+        
         let buttonsContainer = document.createElement('div');
         buttonsContainer.classList.add('note-buttons');
+
+        // Adiciona botão para esconder conteúdo da nota
+        let toggleContentButton = document.createElement('button');
+        toggleContentButton.textContent = '👁️';
+        toggleContentButton.addEventListener('click', function () {
+            let contentElements = note.querySelectorAll('p, input[type="checkbox"]');
+            contentElements.forEach((element) => {
+                element.style.display = (element.style.display === 'none') ? '' : 'none';
+                saveNotes();
+            });
+        });
+
+
+
+
+        
+        buttonsContainer.appendChild(toggleContentButton);
+
     
         let changeColorButton = document.createElement('button');
         changeColorButton.textContent = '🌈';
@@ -294,7 +317,12 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let note of notes) {
             let noteElement = createNote(note.title, note.color, note.items);
             notesContainer.appendChild(noteElement);
-        }
+
+// Restaurando o estado de visibilidade aqui
+            for (let [index, el] of Array.from(noteElement.querySelectorAll('p, input[type="checkbox"]')).entries()) {
+                el.style.display = note.visibility[index] || '';  // restore the visibility state
+            
+        }}
     }
     
     function createItem(note, text) {
@@ -348,5 +376,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    loadNotes(); // Carregando notas no fim
+    loadNotes(); 
 });
