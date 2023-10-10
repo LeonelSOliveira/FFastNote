@@ -103,7 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
 
-
+    window.onload = function() {
+        document.getElementById('note-input').focus();
+      };
+      
 
 
 
